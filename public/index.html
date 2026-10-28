@@ -10,12 +10,26 @@
 <body>
   <main>
     <h1>IT Ticket Tracker</h1>
-    <p>Här börjar mitt projekt för att skapa och hantera IT-ärenden.</p>
+    <p>Här ska användaren kunna beskriva ett IT-problem</p>
     <!-- C1.3: Lägg till ett märkt formulär och exempelärenden efter inläsningen. -->
      <h2>Skapa ett ärende</h2>
      <p>Här ska registrerade ärenden visas tillsammans med sin status</p>
+     <form>
+      <p>
+        <label for ="ticket-title">Rubrik</label>
+        <input type ="text" id ="ticket-title" name="title"/>
+      </p>
+      <p>
+        <label for ="ticket-description">Beskrivning</label>
+        <textarea
+          id="ticket-description"
+          name="description"
+          rows="4"></textarea>
+      </p>
+      <button type="submit">Skapa ärende</button>
+     </form>
     <h2>Ärendelista</h2>
-    <p>Här visas registrerade ärenden tillsammans med sin status</p>
+    <p>Här kan användaren ange en rubrik och beskriva sitt IT-problem</p>
     <ul>
       <li>Skrivaren fungerar inte - Nytt</li>
       <li>Kan inte ansluta till WiFi - Pågår</li>

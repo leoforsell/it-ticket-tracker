@@ -1,1 +1,37 @@
 /* C1.4: Lägg till grundläggande layout, text och mellanrum här. */
+h1 {
+    color: blue;
+}
+h2{
+    color: blue;
+}
+body{
+    font-family: Arial, sans-serif;
+    line-height: 2;
+    margin: 48px;
+}
+/*Deklarera form-regeln*/
+form{
+    border: 1px solid gray;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+label{
+    display: block;
+    margin-bottom: 6px;
+}
+#ticket-title{
+    color: blue;
+}
+input, 
+textarea{
+    font: inherit;
+    padding: 8px;
+}
+button{
+    font: inherit;
+    padding: 8px 16px;
+}
+
+
+

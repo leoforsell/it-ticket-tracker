@@ -27,11 +27,24 @@ input,
 textarea{
     font: inherit;
     padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
 }
 button{
     font: inherit;
     padding: 8px 16px;
 }
+.ticket{
+    border: 1px solid gray;
+    margin-bottom: 16px;
+    padding: 8px;
+    
+}
+main{
+    max-width: 700px;
+    margin: 0 auto;
+}
+
 
 
 

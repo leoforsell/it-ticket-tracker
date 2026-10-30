@@ -6,6 +6,12 @@ Status: mall att fylla i under C1.1.
 
 Skriv 5–8 meningar: Vem ska använda appen? Vilket problem löser den? Vad vill du lära dig?
 
+Jag ska skapa en webbaplikation för att hantera IT-ärenden. En användare ska kunna beskriva ett problem, t. ex. att en skrivare inte fungerar.
+
+Ärenderna kommer att visas i en lista och ha status Nytt, Pågår, Klart. 
+
+Målet är att lära mig webbutveckling genom ett eget projekt.
+
 ## Första versionens fyra kärnfunktioner
 
 1. Skapa ett ärende.

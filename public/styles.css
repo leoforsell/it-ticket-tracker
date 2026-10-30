@@ -8,7 +8,7 @@ h2{
 body{
     font-family: Arial, sans-serif;
     line-height: 2;
-    margin: 48px;
+    margin: 16px;
 }
 /*Deklarera form-regeln*/
 form{
@@ -27,11 +27,24 @@ input,
 textarea{
     font: inherit;
     padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
 }
 button{
     font: inherit;
     padding: 8px 16px;
 }
+.ticket{
+    border: 1px solid gray;
+    margin-bottom: 16px;
+    padding: 8px;
+    
+}
+main{
+    max-width: 700px;
+    margin: 0 auto;
+}
+
 
 
 

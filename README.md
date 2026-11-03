@@ -4,19 +4,21 @@ Ett lärandeprojekt av Leo Forsell: bygg en liten IT-ärendehanterare med JavaSc
 
 ## Aktuell status
 
-Projektet är förberett med en plan och grundfiler. Startsidan är en enkel platshållare. Ärendeformulär, ärendelista, backend, databas, tester och CI är ännu inte implementerade.
+Sidan har struktur i HTML och utseende i CSS. Ärendelistan genereras från en JavaScript-array. Formuläret skapar nya ärenden, och tomma rubriker avvisas.
+
+Valideringsmeddelanden visas för närvarande endast i webbläsarens konsol. Nya ärenden försvinner när sidan laddas om. Backend, databas, automatiserade tester och CI är ännu inte implementerade.
+
+Nästa steg är att visa detaljer för varje ärende, möjliggöra statusändringar och spara ärenden i localStorage så att de finns kvar efter omladdning.
 
 ## Börja här
 
-Läs [portfolio-planen](PORTFOLIO_PLAN_WEB_DEVELOPMENT.md), särskilt avsnittet **Första dagen: måndag 26 oktober**.
-
-Repo och grundfiler är redan skapade. Börja med att fylla i [projektbriefen](docs/project-brief.md) och skissa formuläret och ärendelistan. Fortsätt sedan med HTML i `public/index.html`.
+Läs [portfolio-planen](PORTFOLIO_PLAN_WEB_DEVELOPMENT.md) för projektets mål och kommande uppgifter. Aktuellt fokus är C2.4: dokumentation och förberedelse av en kort demonstration inför Misa IT.
 
 ## Projektfiler
 
 - `public/index.html`: sidans struktur.
 - `public/styles.css`: sidans utseende.
-- `public/app.js`: framtida interaktivitet.
+- `public/app.js`: hanterar ärendedata, visar ärendelistan och skapar nya ärenden via formuläret med kontroll av tomma rubriker. 
 - `docs/project-brief.md`: mål, avgränsning och skiss.
 - `PORTFOLIO_PLAN_WEB_DEVELOPMENT.md`: uppgifter, inläsning och klart-kriterier.
 

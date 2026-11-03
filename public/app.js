@@ -10,10 +10,56 @@ const tickets = [
 /*First simple DOM exercise: Append a first ticket to the list*/ 
 const ticketList = document.querySelector("#ticket-list");
 
-for (element of tickets){
-    item = document.createElement("li");
-    item.textContent = element.title + " - " + element.status;
-    item.classList.add("ticket");
-    ticketList.appendChild(item);
+function renderTickets(tickets){
+    ticketList.replaceChildren();
+
+    for (const element of tickets){
+         const item = document.createElement("li");
+        item.textContent = element.title + " - " + element.status;
+        item.classList.add("ticket");
+        ticketList.appendChild(item);
+    }
 }
+
+const form = document.querySelector("form");
+
+const titleInput = document.querySelector("#ticket-title");
+
+
+const descriptionInput = document.querySelector("#ticket-description");
+
+renderTickets(tickets);
+
+/*A function for handling the form submission*/
+function handleSubmission(event){
+    event.preventDefault();
+    
+    const title = titleInput.value.trim();
+    
+    if(title === ""){
+        console.log("Ange en rubrik.");
+        return;
+    }
+    const newTicket = {
+        id : tickets.length + 1,
+        title: title,
+        description: descriptionInput.value.trim(),
+        status: "Nytt"
+    };
+
+    tickets.push(newTicket);
+    renderTickets(tickets);
+    console.log(newTicket);
+
+    return;
+
+};
+
+
+
+
+console.log(tickets.length);
+
+form.addEventListener("submit", handleSubmission);
+
 

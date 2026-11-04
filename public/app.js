@@ -14,14 +14,23 @@ function showTicketDetails(ticket){
     console.log(ticket);
     const ticketDetails = document.querySelector("#ticket-details");
     const id = document.createElement("p");
-    id.textContent = ticket.id;
+    id.textContent = "Ärendenummer: " + ticket.id;
     const title = document.createElement("h3");
     const description = document.createElement("p");
     const status = document.createElement("p");
+    const button = document.createElement("button");
+    function handleClick(){
+        ticket.status = "Klart";
+        renderTickets(tickets);
+        showTicketDetails(ticket);
+        console.log(ticket.status);
+    }
+    button.textContent = "Markera som klart";
+    button.addEventListener("click", handleClick)
     title.textContent = ticket.title;
     description.textContent = ticket.description;
     status.textContent = "Status: " + ticket.status;   
-    ticketDetails.replaceChildren(title, id, description, status);
+    ticketDetails.replaceChildren(title, id, description, status, button);
 }
 
 function renderTickets(tickets){

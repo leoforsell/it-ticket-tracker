@@ -13,13 +13,15 @@ const ticketList = document.querySelector("#ticket-list");
 function showTicketDetails(ticket){
     console.log(ticket);
     const ticketDetails = document.querySelector("#ticket-details");
+    const id = document.createElement("p");
+    id.textContent = ticket.id;
     const title = document.createElement("h3");
     const description = document.createElement("p");
     const status = document.createElement("p");
     title.textContent = ticket.title;
     description.textContent = ticket.description;
     status.textContent = "Status: " + ticket.status;   
-    ticketDetails.replaceChildren(description, title);
+    ticketDetails.replaceChildren(title, id, description, status);
 }
 
 function renderTickets(tickets){
@@ -30,6 +32,7 @@ function renderTickets(tickets){
         item.textContent = element.title + " - " + element.status;
         item.classList.add("ticket");
         const button = document.createElement("button");
+        button.textContent = "Visa detaljer";
         button.type = "button";
         item.appendChild(button);
         ticketList.appendChild(item);

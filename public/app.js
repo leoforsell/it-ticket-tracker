@@ -10,21 +10,39 @@ const tickets = [
 /*First simple DOM exercise: Append a first ticket to the list*/ 
 const ticketList = document.querySelector("#ticket-list");
 
+function showTicketDetails(ticket){
+    console.log(ticket);
+    const ticketDetails = document.querySelector("#ticket-details");
+    const title = document.createElement("h3");
+    const description = document.createElement("p");
+    const status = document.createElement("p");
+    title.textContent = ticket.title;
+    description.textContent = ticket.description;
+    status.textContent = "Status: " + ticket.status;   
+    ticketDetails.replaceChildren(description, title);
+}
+
 function renderTickets(tickets){
     ticketList.replaceChildren();
 
     for (const element of tickets){
-         const item = document.createElement("li");
+        const item = document.createElement("li");
         item.textContent = element.title + " - " + element.status;
         item.classList.add("ticket");
+        const button = document.createElement("button");
+        button.type = "button";
+        item.appendChild(button);
         ticketList.appendChild(item);
+        button.addEventListener("click",() => {
+            showTicketDetails(element);
+        })
     }
 }
+
 
 const form = document.querySelector("form");
 
 const titleInput = document.querySelector("#ticket-title");
-
 
 const descriptionInput = document.querySelector("#ticket-description");
 
@@ -40,6 +58,7 @@ function handleSubmission(event){
         console.log("Ange en rubrik.");
         return;
     }
+
     const newTicket = {
         id : tickets.length + 1,
         title: title,
@@ -51,15 +70,16 @@ function handleSubmission(event){
     renderTickets(tickets);
     console.log(newTicket);
 
-    return;
-
 };
-
-
-
 
 console.log(tickets.length);
 
 form.addEventListener("submit", handleSubmission);
+
+
+
+
+
+
 
 

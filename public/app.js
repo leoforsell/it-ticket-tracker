@@ -31,6 +31,28 @@ function showTicketDetails(ticket){
     description.textContent = ticket.description;
     status.textContent = "Status: " + ticket.status;   
     ticketDetails.replaceChildren(title, id, description, status, button);
+
+    const label = document.createElement("label");
+    label.textContent = "Storlek";
+    label.htmlFor = "size";
+
+    const dropdown = document.createElement("select");
+    dropdown.id = "size";
+
+    const smallOption = document.createElement("option");
+    smallOption.value = "small";
+    smallOption.textContent = "Liten";
+
+    const largeOption = document.createElement("option");
+    largeOption.value = "large";
+    largeOption.textContent = "Stor";
+
+    dropdown.appendChild(smallOption);
+    dropdown.appendChild(largeOption);
+
+    button.addEventListener("click", () => {
+        showTicketDetails(ticket);
+    })
 }
 
 function renderTickets(tickets){

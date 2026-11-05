@@ -33,23 +33,30 @@ function showTicketDetails(ticket){
     ticketDetails.replaceChildren(title, id, description, status, button);
 
     const label = document.createElement("label");
-    label.textContent = "Storlek";
-    label.htmlFor = "size";
-
+    label.textContent = "Status";
+    label.htmlFor = "status";
+    
     const dropdown = document.createElement("select");
-    dropdown.id = "size";
+    dropdown.id = "status";
 
-    const smallOption = document.createElement("option");
-    smallOption.value = "small";
-    smallOption.textContent = "Liten";
+    const firstStatus = document.createElement("option");
+    firstStatus.textContent = "Nytt";
 
-    const largeOption = document.createElement("option");
-    largeOption.value = "large";
-    largeOption.textContent = "Stor";
+    const secondStatus = document.createElement("option");
+    secondStatus.textContent = "Pågår";
 
-    dropdown.appendChild(smallOption);
-    dropdown.appendChild(largeOption);
+    const thirdStatus = document.createElement("option");
+    thirdStatus.textContent = "Klart";
 
+    dropdown.appendChild(firstStatus);
+    dropdown.appendChild(secondStatus);
+    dropdown.appendChild(thirdStatus);
+
+    dropdown.value = ticket.status;
+
+    
+
+    
     button.addEventListener("click", () => {
         showTicketDetails(ticket);
     })

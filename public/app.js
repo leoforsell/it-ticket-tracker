@@ -1,11 +1,21 @@
 // C2: Lägg till ärendedata, DOM-rendering och formulärhantering steg för steg.
 
 
-const tickets = [
+const defaultTickets = [
     {id: 1, title: "WiFi fungerar ej", description: "Datorn kan ej ansluta till WiFi-närtverket, trots att datorn är ansluten", status: "Nytt"},
     {id: 2, title: "Skärmen fungerar inte", description: "Skrivaren är påslagen men skriver inte ut dokumentet. Utskriften ligger kvar i datorns utskriftskö", status: "Pågår"},
     {id: 3, title: "Skärmen saknade bild", description: "Skärmen visade ingen bild trots att datorn var påslagen. Problemet löstes genom att ansluta bildkabeln ordentligt.", status: "Klart"}
 ];
+
+const savedText = localStorage.getItem("it-ticket-tracker-tickets");
+
+let tickets;
+
+if (savedText !== null){
+    tickets = JSON.parse(savedText);
+} else{
+    tickets = defaultTickets;
+}
 
 /*First simple DOM exercise: Append a first ticket to the list*/ 
 const ticketList = document.querySelector("#ticket-list");
@@ -119,6 +129,14 @@ function handleSubmission(event){
 console.log(tickets.length);
 
 form.addEventListener("submit", handleSubmission);
+
+const ticketsAsText = JSON.stringify(tickets);
+
+localStorage.setItem("it-ticket-tracker-tickets", ticketsAsText);
+
+console.log(JSON.parse(savedText));
+
+
 
 
 

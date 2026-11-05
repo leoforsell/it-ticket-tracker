@@ -20,46 +20,49 @@ function showTicketDetails(ticket){
     const status = document.createElement("p");
     const button = document.createElement("button");
     function handleClick(){
+        button.type = "button";
         ticket.status = "Klart";
         renderTickets(tickets);
         showTicketDetails(ticket);
         console.log(ticket.status);
     }
     button.textContent = "Markera som klart";
-    button.addEventListener("click", handleClick)
+    button.addEventListener("click", handleClick);
     title.textContent = ticket.title;
     description.textContent = ticket.description;
     status.textContent = "Status: " + ticket.status;   
-    ticketDetails.replaceChildren(title, id, description, status, button);
-
+    
     const label = document.createElement("label");
     label.textContent = "Status";
     label.htmlFor = "status";
     
     const dropdown = document.createElement("select");
     dropdown.id = "status";
-
+    
     const firstStatus = document.createElement("option");
     firstStatus.textContent = "Nytt";
-
+    
     const secondStatus = document.createElement("option");
     secondStatus.textContent = "Pågår";
-
+    
     const thirdStatus = document.createElement("option");
     thirdStatus.textContent = "Klart";
-
+    
     dropdown.appendChild(firstStatus);
     dropdown.appendChild(secondStatus);
     dropdown.appendChild(thirdStatus);
-
+    
     dropdown.value = ticket.status;
-
     
-
+    ticketDetails.replaceChildren(title, id, description, status, label, dropdown, button);
     
-    button.addEventListener("click", () => {
+    function handleSelect(){
+        ticket.status = dropdown.value;
+        renderTickets(tickets);
         showTicketDetails(ticket);
-    })
+    }
+
+    dropdown.addEventListener("change", handleSelect);
 }
 
 function renderTickets(tickets){
